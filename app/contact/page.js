@@ -13,9 +13,9 @@ export default function ContactPage() {
         </Reveal>
         <div className="mt-14 grid lg:grid-cols-3 gap-6">
           {[
-            { icon: Phone, t: 'Call', d: '1800-202-RRDR (7737)', sub: 'Mon–Sun, 24 hrs' },
-            { icon: Mail, t: 'Email', d: 'care@rrdr.health', sub: 'Reply within 1 hour' },
-            { icon: MapPin, t: 'Visit', d: 'BKC, Mumbai 400051', sub: '6 AM — 11 PM daily' },
+            { icon: Phone, t: 'Call', d: '+91-9069980136', sub: 'Mon–Sun, 24 hrs' },
+            { icon: Mail, t: 'Email', d: 'support@rrdrindia.com', sub: 'Reply within 1 hour' },
+            { icon: MapPin, t: 'Visit', d: 'Sector-52, Gurugram', sub: 'Baba Chitru Complex, Wazirabad' },
           ].map((c,i)=>(
             <Reveal key={i} delay={i*0.06}>
               <div className="rounded-3xl p-7 bg-white border border-black/5 shadow-soft">

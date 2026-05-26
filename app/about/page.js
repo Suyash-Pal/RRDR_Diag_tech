@@ -19,8 +19,8 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Our story</div>
-          <h1 className="mt-3 text-5xl lg:text-7xl font-bold tracking-tight max-w-4xl text-balance">Built by pathologists. <span className="gradient-text">Engineered like Apple.</span></h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">RRDR was founded in 2003 by Dr. Rohit Raghav and a team of pathologists who believed Indian diagnostics deserved a fundamental redesign — with patient experience, accuracy, and elegance at the center.</p>
+          <h1 className="mt-3 text-5xl lg:text-7xl font-bold tracking-tight max-w-4xl text-balance">Built by clinicians. <span className="gradient-text">Engineered like Apple.</span></h1>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">Rroyals Diagnostics Research Pvt. Ltd. was founded by a team of clinicians and engineers who believed Indian diagnostics deserved a fundamental redesign — with patient experience, accuracy, and elegance at the center.</p>
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <Reveal><h2 className="text-4xl lg:text-5xl font-bold tracking-tight">A different kind of diagnostics company.</h2></Reveal>
           <Reveal delay={0.1}>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>We invest more in pathologists than any private chain in India — because reports are only as accurate as the doctor reviewing them. Every report is signed off by an MD specialist, not an algorithm.</p>
+              <p>We invest deeply in clinical operations and quality systems — because diagnostic reports are only as reliable as the processes behind them. Every workflow is built around precision, traceability, and patient safety.</p>
               <p>Our labs run on Roche cobas, Siemens Atellica and Abbott Architect platforms, calibrated daily and audited monthly. Our software stack — booking, dispatch, LIMS, dashboard — is built in-house.</p>
               <p>The result is a diagnostics experience that feels less like a hospital errand, and more like a thoughtful, premium service. Quietly extraordinary.</p>
             </div>

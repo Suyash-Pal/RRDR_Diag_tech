@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Activity, Droplet, FlaskConical, ShieldCheck, Clock, Sparkles, ChevronRight, Star, BadgeCheck, Calendar, Home, FileText, Download, Microscope, HeartPulse, Stethoscope, TestTube, Beaker, Award } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Reveal from '@/components/Reveal';
-import { TESTS, TESTIMONIALS, DOCTORS } from '@/lib/data';
+import { TESTS, TESTIMONIALS } from '@/lib/data';
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1656331797721-b593b8f00297?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxsYWJvcmF0b3J5fGVufDB8fHxibHVlfDE3Nzg4MzYwODF8MA&ixlib=rb-4.1.0&q=85';
 const LAB_IMG = 'https://images.unsplash.com/photo-1606206873764-fd15e242df52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5fGVufDB8fHxibHVlfDE3Nzg4MzYwODF8MA&ixlib=rb-4.1.0&q=85';
@@ -277,33 +277,42 @@ function WhyChooseUs() {
   );
 }
 
-function DoctorsSection() {
+function LabInfrastructure() {
+  const LAB_ITEMS = [
+    { tag: 'Biochemistry', title: 'Roche cobas Pro', desc: 'Six-sigma automation for liver, kidney, lipid and metabolic panels.' },
+    { tag: 'Immunoassay', title: 'Siemens Atellica', desc: 'Hormone, vitamin and cardiac biomarkers at clinical reference precision.' },
+    { tag: 'Hematology', title: 'Sysmex XN Series', desc: 'High-throughput CBC, reticulocyte and body-fluid analysis with smart flagging.' },
+    { tag: 'Molecular', title: 'Abbott m2000 / NGS', desc: 'Quantitative PCR and next-generation sequencing for advanced diagnostics.' },
+  ];
   return (
     <section className="py-24 lg:py-32 bg-gradient-to-b from-slate-50/60 to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="flex items-end justify-between flex-wrap gap-4">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Meet the team</div>
-              <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">Doctors who sign your report.</h2>
+              <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Built on global-grade platforms</div>
+              <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">Advanced laboratory infrastructure.</h2>
+              <p className="mt-3 text-muted-foreground max-w-xl">CAP-grade analyzers, calibrated daily and audited monthly — engineered for accuracy you can trust.</p>
             </div>
-            <Link href="/doctors" className="text-sm font-semibold inline-flex items-center gap-1.5 hover:text-blue-600">View all <ArrowRight className="w-4 h-4" /></Link>
+            <Link href="/services" className="text-sm font-semibold inline-flex items-center gap-1.5 hover:text-blue-600">Explore services <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </Reveal>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {DOCTORS.map((d, i) => (
+          {LAB_ITEMS.map((d, i) => (
             <Reveal key={i} delay={i * 0.07}>
               <motion.div whileHover={{ y: -6 }} className="group rounded-3xl overflow-hidden bg-white border border-black/5 shadow-soft hover:shadow-premium">
-                <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-                  <Image src={d.img} alt={d.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+                  <div className="absolute inset-0 grid-bg opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent" />
+                  <div className="absolute top-5 left-5 w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center shadow-glow"><FlaskConical className="w-5 h-5 text-white" /></div>
                   <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1">
-                    {d.specialties.map((s)=>(<span key={s} className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">{s}</span>))}
+                    <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">{d.tag}</span>
+                    <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">CAP-grade</span>
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="font-bold tracking-tight">{d.name}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{d.role} · {d.exp}</div>
+                  <div className="font-bold tracking-tight">{d.title}</div>
+                  <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{d.desc}</div>
                 </div>
               </motion.div>
             </Reveal>
@@ -413,7 +422,7 @@ export default function HomePage() {
       <PopularTests />
       <HomeCollectionFlow />
       <WhyChooseUs />
-      <DoctorsSection />
+      <LabInfrastructure />
       <Testimonials />
       <Certifications />
       <FinalCTA />

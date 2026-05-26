@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 
 export const metadata = {
-  title: 'RRDR Diagnostics — Premium Pathology, Reimagined',
-  description: 'NABL-accredited next-generation pathology and diagnostics with home sample collection across India. Same-day reports, doctor-verified, end-to-end secure.',
+  title: 'Rroyals Diagnostics Research Pvt. Ltd. — Premium Pathology, Reimagined',
+  description: 'Rroyals Diagnostics Research Pvt. Ltd. — next-generation pathology and diagnostics with home sample collection across India. Same-day reports, end-to-end secure.',
   openGraph: {
-    title: 'RRDR Diagnostics — Premium Pathology, Reimagined',
-    description: 'Same-day pathology reports. Home collection in 60 min. NABL accredited.',
+    title: 'Rroyals Diagnostics Research Pvt. Ltd. — Premium Pathology, Reimagined',
+    description: 'Same-day pathology reports. Home collection. Secure patient portal.',
     type: 'website',
   },
 };

@@ -10,7 +10,6 @@ const LINKS = [
   { href: '/services', label: 'Services' },
   { href: '/tests', label: 'Tests' },
   { href: '/packages', label: 'Packages' },
-  { href: '/doctors', label: 'Doctors' },
   { href: '/blogs', label: 'Blogs' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
@@ -45,7 +44,7 @@ export default function Navbar() {
             </div>
             <div className="leading-tight">
               <div className="text-[15px] font-bold tracking-tight">RRDR</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground -mt-0.5">Diagnostics</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground -mt-0.5">Rroyals Diagnostics</div>
             </div>
           </Link>
 

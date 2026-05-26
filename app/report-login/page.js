@@ -26,7 +26,7 @@ export default function ReportLogin() {
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl gradient-primary flex items-center justify-center shadow-glow"><Activity className="w-5 h-5 text-white" /></div>
             <div>
-              <div className="font-bold tracking-tight">RRDR Patient Portal</div>
+              <div className="font-bold tracking-tight">Rroyals Diagnostics Patient Portal</div>
               <div className="text-xs text-muted-foreground">Secure report access</div>
             </div>
           </div>
