@@ -1,8 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { ShieldCheck, Activity, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
+
+const LOGO = 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/99s439vg_RPLLogo.png';
 
 export default function ReportLogin() {
   const router = useRouter();
@@ -24,7 +27,9 @@ export default function ReportLogin() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-full max-w-md mx-4">
         <div className="glass rounded-3xl p-8 shadow-premium">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl gradient-primary flex items-center justify-center shadow-glow"><Activity className="w-5 h-5 text-white" /></div>
+            <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-soft ring-1 ring-black/5 bg-white">
+              <Image src={LOGO} alt="Rroyals Diagnostics" width={96} height={96} className="w-full h-full object-cover" />
+            </div>
             <div>
               <div className="font-bold tracking-tight">Rroyals Diagnostics Patient Portal</div>
               <div className="text-xs text-muted-foreground">Secure report access</div>

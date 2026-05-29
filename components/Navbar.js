@@ -1,9 +1,12 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Activity, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
+
+const LOGO = 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/99s439vg_RPLLogo.png';
 
 const LINKS = [
   { href: '/', label: 'Home' },
@@ -37,10 +40,10 @@ export default function Navbar() {
     >
       <div className={`pointer-events-auto mt-4 mx-4 w-full max-w-6xl transition-all duration-500 ${scrolled ? 'glass shadow-premium rounded-2xl' : 'bg-transparent'}`}>
         <div className="flex items-center justify-between px-5 py-3">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-9 h-9 rounded-xl gradient-primary flex items-center justify-center shadow-glow">
-              <Activity className="w-5 h-5 text-white" strokeWidth={2.5} />
-              <span className="absolute inset-0 rounded-xl bg-blue-500/40 pulse-ring" />
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-soft ring-1 ring-black/5 bg-white">
+              <Image src={LOGO} alt="Rroyals Diagnostics" width={80} height={80} className="w-full h-full object-cover" priority />
+              <span className="absolute inset-0 rounded-xl bg-emerald-500/35 pulse-ring pointer-events-none" />
             </div>
             <div className="leading-tight">
               <div className="text-[15px] font-bold tracking-tight">RRDR</div>

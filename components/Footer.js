@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { Activity, Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
+
+const LOGO = 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/99s439vg_RPLLogo.png';
 
 export default function Footer() {
   return (
@@ -7,8 +10,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
         <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center"><Activity className="w-5 h-5 text-white" strokeWidth={2.5} /></div>
+            <div className="flex items-center gap-2.5">
+              <div className="w-11 h-11 rounded-xl overflow-hidden shadow-soft ring-1 ring-black/5 bg-white">
+                <Image src={LOGO} alt="Rroyals Diagnostics" width={88} height={88} className="w-full h-full object-cover" />
+              </div>
               <div>
                 <div className="font-bold tracking-tight text-lg">Rroyals Diagnostics</div>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Research Pvt. Ltd.</div>
