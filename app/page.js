@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Activity, Droplet, FlaskConical, ShieldCheck, Clock, Sparkles, ChevronRight, Star, BadgeCheck, Calendar, Home, FileText, Download, Microscope, HeartPulse, Stethoscope, TestTube, Beaker, Award } from 'lucide-react';
+import { ArrowRight, Activity, Droplet, FlaskConical, ShieldCheck, Clock, Sparkles, ChevronRight, Star, BadgeCheck, Calendar, Home, FileText, Download, Microscope, HeartPulse, Stethoscope, TestTube, Beaker, Award, UserCheck, Zap, Building2 } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import Reveal from '@/components/Reveal';
 import { TESTS, TESTIMONIALS } from '@/lib/data';
@@ -244,21 +244,21 @@ function HomeCollectionFlow() {
 
 function WhyChooseUs() {
   const items = [
-    { icon: ShieldCheck, title: 'NABL accredited labs', desc: 'ISO 15189:2022 certified facilities with stringent QC across every test.' },
-    { icon: Clock, title: 'Same-day reporting', desc: '6-hour average TAT for routine pathology. Real-time status updates.' },
-    { icon: Stethoscope, title: 'Doctor-verified reports', desc: 'Every report reviewed and signed off by MD pathologists — not algorithms.' },
-    { icon: Sparkles, title: 'AI-powered insights', desc: 'Trends, abnormal flags, and lifestyle recommendations on every report.' },
-    { icon: Droplet, title: 'Painless phlebotomy', desc: 'Vein-finder devices and butterfly needles minimize discomfort.' },
-    { icon: FlaskConical, title: 'CAP-grade analyzers', desc: 'Roche, Siemens & Abbott automation. Calibrated daily, audited monthly.' },
+    { icon: UserCheck, title: 'Certified Medical Professionals', desc: 'Accurate diagnostics handled by experienced and certified clinicians dedicated to patient care and clinical precision.' },
+    { icon: ShieldCheck, title: 'NABL Accredited Certification', desc: 'Quality assured by NABL accreditation — every workflow audited to ISO 15189 international laboratory standards.' },
+    { icon: Award, title: 'FSSAI Medical Certification', desc: 'FSSAI compliant medical operations — sample handling, storage and reporting governed by certified protocols.' },
+    { icon: Zap, title: 'Fast Report Delivery', desc: 'Same-day turnaround for routine pathology. Reports delivered the moment they pass clinical verification.' },
+    { icon: FileText, title: 'Digital & Hardcopy Reports', desc: 'Instant secure access on your patient dashboard, with optional hardcopy delivery anywhere in India.' },
+    { icon: Building2, title: 'Corporate Health Checkups', desc: 'End-to-end occupational health programs trusted by leading enterprises — onsite drives and bulk reporting.' },
   ];
   return (
     <section className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Why RRDR</div>
-            <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">Precision you can feel.</h2>
-            <p className="mt-4 text-muted-foreground">Built ground-up by pathologists and product designers to remove every point of friction in modern diagnostics.</p>
+            <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Why choose us</div>
+            <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">Trust, engineered into every report.</h2>
+            <p className="mt-4 text-muted-foreground">Six clinical and operational commitments that make Rroyals Diagnostics the partner of choice for patients and enterprises across India.</p>
           </div>
         </Reveal>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -276,6 +276,103 @@ function WhyChooseUs() {
     </section>
   );
 }
+
+function ClientCard({ name, short, color }) {
+  const display = short || name;
+  const initials = display.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  return (
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+      className="group shrink-0 w-[260px] h-[120px] rounded-2xl bg-white border border-black/5 shadow-soft hover:shadow-premium flex items-center px-6 gap-4 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-50 via-white to-emerald-50" />
+      <div
+        className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white text-sm font-bold tracking-tight shadow-soft transition-transform duration-500 group-hover:scale-105"
+        style={{ background: color || 'linear-gradient(135deg, #0f172a 0%, #172554 100%)' }}
+      >
+        {initials}
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="text-[14px] font-semibold tracking-tight text-foreground/85 group-hover:text-foreground transition-colors leading-snug line-clamp-2">{display}</div>
+        <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Enterprise client</div>
+      </div>
+    </motion.div>
+  );
+}
+
+function TrustedByClients() {
+  const CLIENTS = [
+    { name: 'Compass Group', color: 'linear-gradient(135deg, #003DA5 0%, #0077C8 100%)' },
+    { name: 'Sodexo India Services Pvt. Ltd.', short: 'Sodexo', color: 'linear-gradient(135deg, #ED1C24 0%, #c40c1e 100%)' },
+    { name: 'Shine & Standard', color: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)' },
+    { name: 'Life Pillar Foods', color: 'linear-gradient(135deg, #15803d 0%, #16a34a 100%)' },
+    { name: 'Lemon Tree Hotels', color: 'linear-gradient(135deg, #ca8a04 0%, #eab308 100%)' },
+    { name: 'Rare Hospitality & Services Pvt. Ltd.', short: 'Rare Hospitality', color: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)' },
+    { name: 'GDX Security Solutions Pvt. Ltd.', short: 'GDX Security', color: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)' },
+    { name: 'Shining Star Outsource Pvt. Ltd.', short: 'Shining Star', color: 'linear-gradient(135deg, #0369a1 0%, #0284c7 100%)' },
+    { name: 'Duster Total Solutions Pvt. Ltd.', short: 'Duster Solutions', color: 'linear-gradient(135deg, #475569 0%, #64748b 100%)' },
+    { name: 'Devyani International (Costa Coffee)', short: 'Costa Coffee', color: 'linear-gradient(135deg, #6F1D1B 0%, #8b2c2a 100%)' },
+    { name: 'Shubram Hospital Solutions Pvt. Ltd.', short: 'Shubram Hospital', color: 'linear-gradient(135deg, #0e7490 0%, #06b6d4 100%)' },
+  ];
+  const TRACK = [...CLIENTS, ...CLIENTS];
+  return (
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-white">
+      <div className="absolute inset-0 -z-10 opacity-60 grid-bg mask-fade-b" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Enterprise partners</div>
+            <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">Trusted by leading organizations.</h2>
+            <p className="mt-4 text-muted-foreground text-balance">Delivering trusted healthcare and diagnostic services to renowned organizations across industries — hospitality, F&amp;B, security, facilities and hospitals.</p>
+          </div>
+        </Reveal>
+      </div>
+
+      {/* Marquee */}
+      <div className="relative mt-16 overflow-hidden" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)' }}>
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 50, ease: 'linear', repeat: Infinity }}
+        >
+          {TRACK.map((c, i) => (<ClientCard key={i} {...c} />))}
+        </motion.div>
+      </div>
+
+      {/* Compact grid below for full readability */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-14">
+        <Reveal delay={0.1}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {CLIENTS.map((c, i) => (
+              <motion.div key={i} whileHover={{ y: -2 }} className="flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-white border border-black/5 shadow-soft">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span className="text-[13px] font-medium text-foreground/80 truncate">{c.short || c.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <div className="mt-12 grid sm:grid-cols-3 gap-4">
+            {[
+              { v: '11+', l: 'Enterprise clients' },
+              { v: '40,000+', l: 'Annual employee screenings' },
+              { v: '99.5%', l: 'On-time corporate report SLA' },
+            ].map((s, i) => (
+              <div key={i} className="rounded-2xl p-6 bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-premium relative overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl" />
+                <div className="text-3xl font-bold tracking-tight">{s.v}</div>
+                <div className="mt-1 text-xs text-white/70 uppercase tracking-wider">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 
 function LabInfrastructure() {
   const LAB_ITEMS = [
@@ -422,6 +519,7 @@ export default function HomePage() {
       <PopularTests />
       <HomeCollectionFlow />
       <WhyChooseUs />
+      <TrustedByClients />
       <LabInfrastructure />
       <Testimonials />
       <Certifications />
