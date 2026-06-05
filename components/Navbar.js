@@ -46,8 +46,8 @@ export default function Navbar() {
               <span className="absolute inset-0 rounded-xl bg-emerald-500/35 pulse-ring pointer-events-none" />
             </div>
             <div className="leading-tight">
-              <div className="text-[15px] font-bold tracking-tight">RRDR</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground -mt-0.5">Rroyals Diagnostics</div>
+              <div className="text-[15px] font-bold tracking-tight">RRDRINDIA</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground -mt-0.5">RROYALS DIAGNOSTICS RESEARCH PVT. LTD.</div>
             </div>
           </Link>
 

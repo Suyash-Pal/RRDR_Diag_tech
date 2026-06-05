@@ -45,7 +45,7 @@ function Hero() {
         <motion.div style={{ y, opacity }} className="text-center max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium text-foreground/70 shadow-soft">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            NABL accredited · ISO 15189:2022 · 200,000+ patients
+            NABL accredited · ISO 9001:2015 · 200,000+ patients
           </motion.div>
 
           <h1 className="mt-6 text-[40px] sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] text-balance">
@@ -54,7 +54,7 @@ function Hero() {
           </h1>
 
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }} className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-            Same-day pathology reports, doctor-verified, delivered to your dashboard. Home collection across 184 cities — booked in under 60 seconds.
+            Same-day pathology reports, doctor-verified, delivered to your dashboard. Sample collection across 41 cities — booked in under 60 seconds.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65, duration: 0.8 }} className="mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
@@ -65,7 +65,7 @@ function Hero() {
               <Download className="w-4 h-4" /> Download Report
             </Link>
             <Link href="/home-collection" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-foreground/70 hover:text-foreground">
-              <Home className="w-4 h-4" /> Home Collection <ChevronRight className="w-4 h-4" />
+              <Home className="w-4 h-4" /> Corporate Sample Collection <ChevronRight className="w-4 h-4" />
             </Link>
           </motion.div>
 
@@ -111,10 +111,10 @@ function Hero() {
 
 function TrustBar() {
   const items = [
-    { v: 1240000, suffix: '+', label: 'Reports processed', icon: FileText },
-    { v: 22, suffix: ' yrs', label: 'Pathology expertise', icon: Award },
+    { v: 100000, suffix: '+', label: 'Reports processed', icon: FileText },
+    { v: 12, suffix: ' yrs', label: 'Pathology expertise', icon: Award },
     { v: 99.97, suffix: '%', decimals: 2, label: 'Diagnostic accuracy', icon: ShieldCheck },
-    { v: 320, suffix: '+', label: 'Specialist doctors', icon: Stethoscope },
+    { v: 10, suffix: '+', label: 'Specialist doctors', icon: Stethoscope },
   ];
   return (
     <section className="py-20 lg:py-28">
@@ -145,7 +145,7 @@ function PopularTests() {
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Most booked</div>
               <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">Popular diagnostic tests</h2>
-              <p className="mt-3 text-muted-foreground max-w-xl">Doctor-curated panels covering 92% of preventive screening needs. Transparent pricing, no hidden charges.</p>
+              <p className="mt-3 text-muted-foreground max-w-xl">Doctor-curated panels covering 92% of preventive screening needs.</p>
             </div>
             <Link href="/tests" className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold hover:text-blue-600">View all tests <ArrowRight className="w-4 h-4" /></Link>
           </div>
@@ -166,10 +166,10 @@ function PopularTests() {
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{t.time}</span>
                 </div>
                 <div className="mt-6 flex items-center justify-between">
-                  <div>
+                  {/* <div>
                     <span className="text-2xl font-bold">₹{t.price}</span>
                     <span className="ml-2 text-sm text-muted-foreground line-through">₹{t.mrp}</span>
-                  </div>
+                  </div> */}
                   <Link href="/tests" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">Book <ArrowRight className="w-4 h-4" /></Link>
                 </div>
               </motion.div>
@@ -246,7 +246,7 @@ function WhyChooseUs() {
   const items = [
     { icon: UserCheck, title: 'Certified Medical Professionals', desc: 'Accurate diagnostics handled by experienced and certified clinicians dedicated to patient care and clinical precision.' },
     { icon: ShieldCheck, title: 'NABL Accredited Certification', desc: 'Quality assured by NABL accreditation — every workflow audited to ISO 15189 international laboratory standards.' },
-    { icon: Award, title: 'FSSAI Medical Certification', desc: 'FSSAI compliant medical operations — sample handling, storage and reporting governed by certified protocols.' },
+    { icon: Award, title: 'ISO Medical Certificate', desc: 'ISO compliant medical operations — sample handling, storage and reporting governed by certified protocols.' },
     { icon: Zap, title: 'Fast Report Delivery', desc: 'Same-day turnaround for routine pathology. Reports delivered the moment they pass clinical verification.' },
     { icon: FileText, title: 'Digital & Hardcopy Reports', desc: 'Instant secure access on your patient dashboard, with optional hardcopy delivery anywhere in India.' },
     { icon: Building2, title: 'Corporate Health Checkups', desc: 'End-to-end occupational health programs trusted by leading enterprises — onsite drives and bulk reporting.' },
@@ -322,7 +322,7 @@ function TrustedByClients() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto">
-            <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Enterprise partners</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Corporate Partners</div>
             <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">Trusted by leading organizations.</h2>
             <p className="mt-4 text-muted-foreground text-balance">Delivering trusted healthcare and diagnostic services to renowned organizations across industries — hospitality, F&amp;B, security, facilities and hospitals.</p>
           </div>
@@ -374,51 +374,51 @@ function TrustedByClients() {
 }
 
 
-function LabInfrastructure() {
-  const LAB_ITEMS = [
-    { tag: 'Biochemistry', title: 'Roche cobas Pro', desc: 'Six-sigma automation for liver, kidney, lipid and metabolic panels.' },
-    { tag: 'Immunoassay', title: 'Siemens Atellica', desc: 'Hormone, vitamin and cardiac biomarkers at clinical reference precision.' },
-    { tag: 'Hematology', title: 'Sysmex XN Series', desc: 'High-throughput CBC, reticulocyte and body-fluid analysis with smart flagging.' },
-    { tag: 'Molecular', title: 'Abbott m2000 / NGS', desc: 'Quantitative PCR and next-generation sequencing for advanced diagnostics.' },
-  ];
-  return (
-    <section className="py-24 lg:py-32 bg-gradient-to-b from-slate-50/60 to-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <Reveal>
-          <div className="flex items-end justify-between flex-wrap gap-4">
-            <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Built on global-grade platforms</div>
-              <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">Advanced laboratory infrastructure.</h2>
-              <p className="mt-3 text-muted-foreground max-w-xl">CAP-grade analyzers, calibrated daily and audited monthly — engineered for accuracy you can trust.</p>
-            </div>
-            <Link href="/services" className="text-sm font-semibold inline-flex items-center gap-1.5 hover:text-blue-600">Explore services <ArrowRight className="w-4 h-4" /></Link>
-          </div>
-        </Reveal>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {LAB_ITEMS.map((d, i) => (
-            <Reveal key={i} delay={i * 0.07}>
-              <motion.div whileHover={{ y: -6 }} className="group rounded-3xl overflow-hidden bg-white border border-black/5 shadow-soft hover:shadow-premium">
-                <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
-                  <div className="absolute inset-0 grid-bg opacity-50" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent" />
-                  <div className="absolute top-5 left-5 w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center shadow-glow"><FlaskConical className="w-5 h-5 text-white" /></div>
-                  <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1">
-                    <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">{d.tag}</span>
-                    <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">CAP-grade</span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="font-bold tracking-tight">{d.title}</div>
-                  <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{d.desc}</div>
-                </div>
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+ function LabInfrastructure() {
+//   const LAB_ITEMS = [
+//     { tag: 'Biochemistry', title: 'Roche cobas Pro', desc: 'Six-sigma automation for liver, kidney, lipid and metabolic panels.' },
+//     { tag: 'Immunoassay', title: 'Siemens Atellica', desc: 'Hormone, vitamin and cardiac biomarkers at clinical reference precision.' },
+//     { tag: 'Hematology', title: 'Sysmex XN Series', desc: 'High-throughput CBC, reticulocyte and body-fluid analysis with smart flagging.' },
+//     { tag: 'Molecular', title: 'Abbott m2000 / NGS', desc: 'Quantitative PCR and next-generation sequencing for advanced diagnostics.' },
+//   ];
+//   return (
+//     <section className="py-24 lg:py-32 bg-gradient-to-b from-slate-50/60 to-white">
+//       <div className="max-w-7xl mx-auto px-6 lg:px-10">
+//         <Reveal>
+//           <div className="flex items-end justify-between flex-wrap gap-4">
+//             <div>
+//               <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Built on global-grade platforms</div>
+//               <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">Advanced laboratory infrastructure.</h2>
+//               <p className="mt-3 text-muted-foreground max-w-xl">CAP-grade analyzers, calibrated daily and audited monthly — engineered for accuracy you can trust.</p>
+//             </div>
+//             <Link href="/services" className="text-sm font-semibold inline-flex items-center gap-1.5 hover:text-blue-600">Explore services <ArrowRight className="w-4 h-4" /></Link>
+//           </div>
+//         </Reveal>
+//         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+//           {LAB_ITEMS.map((d, i) => (
+//             <Reveal key={i} delay={i * 0.07}>
+//               <motion.div whileHover={{ y: -6 }} className="group rounded-3xl overflow-hidden bg-white border border-black/5 shadow-soft hover:shadow-premium">
+//                 <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+//                   <div className="absolute inset-0 grid-bg opacity-50" />
+//                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent" />
+//                   <div className="absolute top-5 left-5 w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center shadow-glow"><FlaskConical className="w-5 h-5 text-white" /></div>
+//                   <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1">
+//                     <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">{d.tag}</span>
+//                     <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full glass-dark text-white">CAP-grade</span>
+//                   </div>
+//                 </div>
+//                 <div className="p-5">
+//                   <div className="font-bold tracking-tight">{d.title}</div>
+//                   <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{d.desc}</div>
+//                 </div>
+//               </motion.div>
+//             </Reveal>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+ }
 
 function Testimonials() {
   const [i, setI] = useState(0);
@@ -459,7 +459,7 @@ function Testimonials() {
 }
 
 function Certifications() {
-  const items = ['NABL', 'ISO 15189', 'CAP', 'ICMR', 'FDA-CE', 'ABHI'];
+  const items = ['NABL-MC-10027', 'ISO 9001-2015'];
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -469,6 +469,7 @@ function Certifications() {
             <h2 className="mt-3 text-3xl lg:text-4xl font-bold tracking-tight">Quality you can verify.</h2>
           </div>
         </Reveal>
+        <center>
         <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4">
           {items.map((x, i) => (
             <Reveal key={x} delay={i * 0.05}>
@@ -478,6 +479,7 @@ function Certifications() {
             </Reveal>
           ))}
         </div>
+        </center>
       </div>
     </section>
   );
@@ -500,7 +502,7 @@ function FinalCTA() {
               <p className="mt-5 text-white/70 max-w-lg">A 12-minute appointment that protects the next 12 years of your life. Free home collection, same-day report, doctor-verified.</p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link href="/packages" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-foreground text-sm font-semibold hover:scale-[1.02] transition-transform shadow-glow">Explore packages <ArrowRight className="w-4 h-4" /></Link>
-                <Link href="/home-collection" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-dark text-sm font-semibold text-white">Free home collection</Link>
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass-dark text-sm font-semibold text-white">Book a test</Link>
               </div>
             </div>
           </div>
