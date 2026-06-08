@@ -43,9 +43,12 @@ function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div style={{ y, opacity }} className="text-center max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium text-foreground/70 shadow-soft">
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 pl-1.5 pr-3.5 py-1.5 rounded-full glass text-xs font-medium text-foreground/75 shadow-soft">
+            <span className="relative w-6 h-6 rounded-full overflow-hidden bg-white ring-1 ring-amber-300/40 shadow-[0_0_12px_-2px_rgba(217,119,6,0.45)] shrink-0">
+              <img src="https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/vgitdc5j_WhatsApp%20Image%202026-06-06%20at%2015.15.02.jpeg" alt="ISO 9001:2015 Certified" className="w-full h-full object-contain" />
+            </span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            NABL accredited · ISO 9001:2015 · 200,000+ patients
+            NABL Accredited · ISO 9001:2015 · 200,000+ patients
           </motion.div>
 
           <h1 className="mt-6 text-[40px] sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] text-balance">
