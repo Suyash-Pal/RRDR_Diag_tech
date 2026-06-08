@@ -66,7 +66,7 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/report-login" className="hidden sm:inline-flex group relative items-center gap-2 px-4 py-2 rounded-full text-[13px] font-semibold text-white gradient-primary shadow-glow hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.6)] transition-shadow">
+            <Link href="http://122.176.77.190:8000/Reports/" className="hidden sm:inline-flex group relative items-center gap-2 px-4 py-2 rounded-full text-[13px] font-semibold text-white gradient-primary shadow-glow hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.6)] transition-shadow">
               <Download className="w-3.5 h-3.5" />
               <span>Download Report</span>
               <span className="absolute -inset-px rounded-full bg-gradient-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-30 blur-md transition" />

@@ -17,7 +17,7 @@ export default function HomeCollectionPage() {
     <div className="pt-32 pb-24">
       <div className="max-w-3xl mx-auto px-6">
         <Reveal>
-          <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold text-center">Home Sample Collection</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold text-center">Sample Collection</div>
           <h1 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-center text-balance">Book in 60 seconds. Free across India.</h1>
         </Reveal>
 
@@ -41,10 +41,10 @@ export default function HomeCollectionPage() {
                 <div>
                   <label className="text-sm font-semibold">Selected package / test</label>
                   <select value={form.test} onChange={(e)=>set('test', e.target.value)} className="mt-2 w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-sm">
-                    <option>Aarogya Advanced</option><option>Aarogya Essential</option><option>Women Wellness Pro</option><option>Men Vitality</option><option>Senior Care 360</option><option>Complete Blood Count</option><option>Thyroid Profile</option><option>Vitamin D</option>
+                    <option>Aarogya Advanced</option><option>Aarogya Essential</option><option>Women Wellness Pro</option><option>Men Vitality</option><option>Senior Care 360</option><option>Complete Blood Count</option><option>Thyroid Profile</option><option>Vitamin D</option><option>Corporate Package</option>
                   </select>
                   <div className="mt-6 grid grid-cols-2 gap-3">
-                    {['Home Collection', 'Lab Visit'].map((x,i)=>(
+                    {['Corporate Collection', 'Lab Visit'].map((x,i)=>(
                       <button key={x} className={`p-4 rounded-2xl border text-left ${i===0 ? 'border-foreground bg-foreground/5' : 'border-black/10 bg-white'}`}>
                         <div className="flex items-center gap-2 font-semibold text-sm"><Home className="w-4 h-4" />{x}</div>
                         <div className="mt-1 text-xs text-muted-foreground">{i===0 ? 'Free · 60-90 min' : 'Walk-in · No wait'}</div>

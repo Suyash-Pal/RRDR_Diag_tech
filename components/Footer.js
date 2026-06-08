@@ -1,9 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const LOGO = 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/99s439vg_RPLLogo.png';
-
+const socialLinks = [
+  {
+    icon: Twitter,
+    url: "https://x.com/rrdrindia",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/rrdrindia2020/ ",
+  },
+  {
+    icon: Facebook,
+    url: "https://www.facebook.com/profile.php?id=61590559828128",
+  },
+  {
+    icon: Youtube,
+    url: "https://www.youtube.com/@rrdrindia2020",
+  },
+];
 export default function Footer() {
   return (
     <footer className="relative mt-32 border-t border-black/5 bg-gradient-to-b from-white to-slate-50">
@@ -21,8 +38,18 @@ export default function Footer() {
             </div>
             <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">Rroyals Diagnostics Research Pvt. Ltd. — next-generation pathology and diagnostics, delivered with luxury-grade care. Trusted by patients and clinicians across India.</p>
             <div className="mt-6 flex items-center gap-3">
-              {[Twitter, Linkedin, Instagram].map((I, i) => (<a key={i} href="#" className="w-9 h-9 rounded-full glass flex items-center justify-center hover:shadow-glow transition-shadow"><I className="w-4 h-4" /></a>))}
-            </div>
+  {socialLinks.map(({ icon: Icon, url }, i) => (
+    <a
+      key={i}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 rounded-full glass flex items-center justify-center hover:shadow-glow transition-shadow"
+    >
+      <Icon className="w-4 h-4" />
+    </a>
+  ))}
+</div>
           </div>
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Diagnostics</div>

@@ -61,7 +61,7 @@ function Hero() {
             <Link href="/tests" className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-foreground text-background text-sm font-semibold hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-premium">
               Book a Test <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
             </Link>
-            <Link href="/report-login" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass text-sm font-semibold shadow-soft">
+            <Link href="http://122.176.77.190:8000/Reports/" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass text-sm font-semibold shadow-soft">
               <Download className="w-4 h-4" /> Download Report
             </Link>
             <Link href="/home-collection" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-foreground/70 hover:text-foreground">
@@ -233,7 +233,7 @@ function HomeCollectionFlow() {
                   <li key={i} className="flex gap-3 items-center text-sm"><BadgeCheck className="w-4 h-4 text-emerald-600" />{x}</li>
                 ))}
               </ul>
-              <Link href="/home-collection" className="mt-8 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-foreground text-background text-sm font-semibold">Book home collection <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/home-collection" className="mt-8 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-foreground text-background text-sm font-semibold">Book Now <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </Reveal>
@@ -421,41 +421,41 @@ function TrustedByClients() {
  }
 
 function Testimonials() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % TESTIMONIALS.length), 5000);
-    return () => clearInterval(t);
-  }, []);
-  return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-100/60 to-emerald-100/40 blur-3xl" />
-      </div>
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <Reveal>
-          <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Loved by patients & doctors</div>
-          <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">A 4.92 rating, earned every report.</h2>
-        </Reveal>
-        <div className="relative mt-14 h-[260px]">
-          {TESTIMONIALS.map((t, idx) => (
-            <motion.div key={idx} initial={false} animate={{ opacity: idx === i ? 1 : 0, y: idx === i ? 0 : 20, scale: idx === i ? 1 : 0.96 }} transition={{ duration: 0.7, ease: [0.22,1,0.36,1] }} className={`absolute inset-0 ${idx === i ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-              <div className="mx-auto max-w-3xl glass rounded-3xl p-8 lg:p-10 shadow-premium">
-                <div className="flex justify-center gap-0.5 mb-4">{Array.from({length:5}).map((_,k)=>(<Star key={k} className="w-4 h-4 fill-amber-400 text-amber-400" />))}</div>
-                <p className="text-lg lg:text-xl leading-relaxed text-balance">“{t.text}”</p>
-                <div className="mt-6 text-sm font-semibold">{t.name}</div>
-                <div className="text-xs text-muted-foreground">{t.role}</div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className="mt-8 flex justify-center gap-2">
-          {TESTIMONIALS.map((_, idx) => (
-            <button key={idx} onClick={() => setI(idx)} className={`h-1.5 rounded-full transition-all ${idx === i ? 'w-8 bg-foreground' : 'w-1.5 bg-foreground/20'}`} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  // const [i, setI] = useState(0);
+  // useEffect(() => {
+  //   const t = setInterval(() => setI((v) => (v + 1) % TESTIMONIALS.length), 5000);
+  //   return () => clearInterval(t);
+  // }, []);
+  // return (
+  //   <section className="py-24 lg:py-32 relative overflow-hidden">
+  //     <div className="absolute inset-0 -z-10">
+  //       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-blue-100/60 to-emerald-100/40 blur-3xl" />
+  //     </div>
+  //     <div className="max-w-4xl mx-auto px-6 text-center">
+  //       <Reveal>
+  //         <div className="text-xs uppercase tracking-[0.2em] text-blue-600 font-semibold">Loved by patients & doctors</div>
+  //         <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-balance">A 4.92 rating, earned every report.</h2>
+  //       </Reveal>
+  //       <div className="relative mt-14 h-[260px]">
+  //         {TESTIMONIALS.map((t, idx) => (
+  //           <motion.div key={idx} initial={false} animate={{ opacity: idx === i ? 1 : 0, y: idx === i ? 0 : 20, scale: idx === i ? 1 : 0.96 }} transition={{ duration: 0.7, ease: [0.22,1,0.36,1] }} className={`absolute inset-0 ${idx === i ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+  //             <div className="mx-auto max-w-3xl glass rounded-3xl p-8 lg:p-10 shadow-premium">
+  //               <div className="flex justify-center gap-0.5 mb-4">{Array.from({length:5}).map((_,k)=>(<Star key={k} className="w-4 h-4 fill-amber-400 text-amber-400" />))}</div>
+  //               <p className="text-lg lg:text-xl leading-relaxed text-balance">“{t.text}”</p>
+  //               <div className="mt-6 text-sm font-semibold">{t.name}</div>
+  //               <div className="text-xs text-muted-foreground">{t.role}</div>
+  //             </div>
+  //           </motion.div>
+  //         ))}
+  //       </div>
+  //       <div className="mt-8 flex justify-center gap-2">
+  //         {TESTIMONIALS.map((_, idx) => (
+  //           <button key={idx} onClick={() => setI(idx)} className={`h-1.5 rounded-full transition-all ${idx === i ? 'w-8 bg-foreground' : 'w-1.5 bg-foreground/20'}`} />
+  //         ))}
+  //       </div>
+  //     </div>
+  //   </section>
+  // );
 }
 
 function Certifications() {
