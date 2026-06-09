@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Facebook, Youtube, ExternalLink } from 'lucide-react';
 
 const LOGO = 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/99s439vg_RPLLogo.png';
 const socialLinks = [
@@ -72,9 +72,33 @@ export default function Footer() {
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Contact</div>
             <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex gap-2 items-start"><Phone className="w-4 h-4 mt-0.5 text-blue-600" />+91-9069980136</li>
-              <li className="flex gap-2 items-start"><Mail className="w-4 h-4 mt-0.5 text-blue-600" />support@rrdrindia.com</li>
-              <li className="flex gap-2 items-start"><MapPin className="w-4 h-4 mt-0.5 text-blue-600" />Shop No. 12A, Baba Chitru Complex, Wazirabad, Sector-52, Gurugram, Haryana - 122003</li>
+              <li className="flex gap-2 items-start">
+                <Phone className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
+                <a href="tel:+919069980136" className="hover:text-foreground transition-colors">+91-9069980136</a>
+              </li>
+              <li className="flex gap-2 items-start">
+                <Mail className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
+                <a href="mailto:support@rrdrindia.com" className="hover:text-foreground transition-colors">support@rrdrindia.com</a>
+              </li>
+              <li className="flex gap-2 items-start group">
+                <MapPin className="w-4 h-4 mt-0.5 text-blue-600 shrink-0" />
+                <a
+                  href="https://maps.app.goo.gl/rYBuSSRPv82gcYFM6?g_st=aw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View RRDR Diagnostics on Google Maps"
+                  className="leading-snug hover:text-foreground transition-colors"
+                >
+                  Shop No. 12A, Baba Chitru Complex, Wazirabad, Sector-52, Gurugram, Haryana - 122003
+                  <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-600 group-hover:text-blue-700 transition-colors">
+                    <span className="relative inline-block">
+                      View on Google Maps
+                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-blue-600 group-hover:w-full transition-all duration-300" />
+                    </span>
+                    <ExternalLink className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
