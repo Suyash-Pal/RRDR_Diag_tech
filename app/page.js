@@ -472,17 +472,15 @@ function Certifications() {
             <h2 className="mt-3 text-3xl lg:text-4xl font-bold tracking-tight">Quality you can verify.</h2>
           </div>
         </Reveal>
-        <center>
-        <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4">
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6">
           {items.map((x, i) => (
             <Reveal key={x} delay={i * 0.05}>
-              <div className="aspect-[3/2] rounded-2xl glass shadow-soft flex items-center justify-center">
+              <div className="w-40 sm:w-48 aspect-[3/2] rounded-2xl glass shadow-soft flex items-center justify-center">
                 <span className="text-sm font-bold tracking-wider text-foreground/70">{x}</span>
               </div>
             </Reveal>
           ))}
         </div>
-        </center>
       </div>
     </section>
   );
