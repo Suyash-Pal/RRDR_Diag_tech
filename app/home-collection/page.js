@@ -45,21 +45,86 @@ export default function HomeCollectionPage() {
     // Validate before leaving the patient step (step 2 → 3)
     if (step === 2) {
       if (!validatePhone()) return;
-      // Submit booking → email
+      // Submit booking → email (via Web3Forms, client-side)
       setSending(true);
       setSubmitError('');
       const ref = 'RRDR-CN-' + Math.floor(Math.random() * 99999).toString().padStart(5, '0');
       try {
-        const res = await fetch('/api/send-booking', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...form, reference: ref }),
+        const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+        const plainMessage = [
+          `New booking received from the Rroyals Diagnostics website.`,
+          ``,
+          `Reference  : ${ref}`,
+          `Package    : ${form.test}`,
+          `Type       : ${form.collection}`,
+          `Date       : ${form.date || 'Not provided'}`,
+          `Time slot  : ${form.time || 'Not provided'}`,
+          ``,
+          `-- Patient Details --`,
+          `Name    : ${form.name || 'Not provided'}`,
+          `Mobile  : +91 ${form.phone}`,
+          `Address : ${form.address || 'Not provided'}`,
+          `PIN     : ${form.pin || 'Not provided'}`,
+          ``,
+          `Please contact the patient to confirm the booking.`,
+        ].join('\n');
+
+        // Submit via a classic HTML form post into a hidden iframe.
+        // This bypasses CORS entirely (form submissions are not CORS-controlled).
+        // Web3Forms will receive the data and dispatch the email server-side.
+        const fields = {
+          access_key: accessKey || '',
+          subject: `New Sample Collection Booking · ${ref}`,
+          from_name: 'Rroyals Diagnostics Booking',
+          reference: ref,
+          package: form.test,
+          collection_type: form.collection,
+          booking_date: form.date,
+          booking_time: form.time,
+          patient_name: form.name,
+          patient_mobile: `+91 ${form.phone}`,
+          patient_address: form.address,
+          patient_pin: form.pin,
+          message: plainMessage,
+        };
+
+        await new Promise((resolve) => {
+          const iframeName = `w3iframe_${Date.now()}`;
+          const iframe = document.createElement('iframe');
+          iframe.name = iframeName;
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
+
+          const formEl = document.createElement('form');
+          formEl.action = 'https://api.web3forms.com/submit';
+          formEl.method = 'POST';
+          formEl.target = iframeName;
+          formEl.enctype = 'multipart/form-data';
+          Object.entries(fields).forEach(([k, v]) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = k;
+            input.value = v ?? '';
+            formEl.appendChild(input);
+          });
+          document.body.appendChild(formEl);
+
+          let done = false;
+          const finish = () => {
+            if (done) return; done = true;
+            // Cleanup after a brief delay so the request finishes
+            setTimeout(() => {
+              try { document.body.removeChild(formEl); } catch (_) {}
+              try { document.body.removeChild(iframe); } catch (_) {}
+            }, 4000);
+            resolve();
+          };
+          iframe.addEventListener('load', finish);
+          // Safety net in case load event never fires (some browsers when response is opaque)
+          setTimeout(finish, 3500);
+          formEl.submit();
         });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok || data?.ok === false) {
-          // Surface backend error but still allow user to proceed (graceful)
-          setSubmitError(data?.error || 'We could not send the confirmation email, but your booking details were captured.');
-        }
+
         setReference(ref);
         setStep(3);
       } catch (e) {
