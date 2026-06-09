@@ -280,42 +280,71 @@ function WhyChooseUs() {
   );
 }
 
-function ClientCard({ name, short, color }) {
+function MarqueeLogo({ name, short, color, logo }) {
   const display = short || name;
   const initials = display.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
   return (
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-      className="group shrink-0 w-[260px] h-[120px] rounded-2xl bg-white border border-black/5 shadow-soft hover:shadow-premium flex items-center px-6 gap-4 relative overflow-hidden"
+      title={name}
+      className="group shrink-0 w-[200px] h-[110px] rounded-2xl bg-white border border-black/5 shadow-soft hover:shadow-premium flex items-center justify-center p-5 relative overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-50 via-white to-emerald-50" />
-      <div
-        className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white text-sm font-bold tracking-tight shadow-soft transition-transform duration-500 group-hover:scale-105"
-        style={{ background: color || 'linear-gradient(135deg, #0f172a 0%, #172554 100%)' }}
-      >
-        {initials}
+      {logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={logo}
+          alt={name}
+          className="max-h-full max-w-full object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+        />
+      ) : (
+        <div
+          className="w-14 h-14 rounded-2xl flex items-center justify-center text-white text-base font-bold tracking-tight shadow-soft transition-transform duration-500 group-hover:scale-110"
+          style={{ background: color || 'linear-gradient(135deg, #0f172a 0%, #172554 100%)' }}
+        >
+          {initials}
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
+function GridClient({ name, short, color, logo }) {
+  const display = short || name;
+  const initials = display.split(/[\s&]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+  return (
+    <motion.div whileHover={{ y: -2 }} className="group flex items-center gap-3 px-3.5 py-3 rounded-2xl bg-white border border-black/5 shadow-soft hover:shadow-premium transition">
+      <div className="shrink-0 w-10 h-10 rounded-xl bg-white border border-black/5 flex items-center justify-center overflow-hidden">
+        {logo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={logo} alt={display} className="max-h-7 max-w-7 object-contain" />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center text-white text-[11px] font-bold tracking-tight"
+            style={{ background: color || 'linear-gradient(135deg, #0f172a 0%, #172554 100%)' }}
+          >
+            {initials}
+          </div>
+        )}
       </div>
-      <div className="min-w-0 flex-1">
-        <div className="text-[14px] font-semibold tracking-tight text-foreground/85 group-hover:text-foreground transition-colors leading-snug line-clamp-2">{display}</div>
-        <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Enterprise client</div>
-      </div>
+      <span className="text-[13px] font-medium text-foreground/80 leading-tight line-clamp-2">{display}</span>
     </motion.div>
   );
 }
 
 function TrustedByClients() {
   const CLIENTS = [
-    { name: 'Compass Group', color: 'linear-gradient(135deg, #003DA5 0%, #0077C8 100%)' },
-    { name: 'Sodexo India Services Pvt. Ltd.', short: 'Sodexo', color: 'linear-gradient(135deg, #ED1C24 0%, #c40c1e 100%)' },
+    { name: 'Compass Group', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Compass_Group_logo.jpeg/330px-Compass_Group_logo.jpeg', color: 'linear-gradient(135deg, #003DA5 0%, #0077C8 100%)' },
+    { name: 'Sodexo India Services Pvt. Ltd.', short: 'Sodexo', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Sodexo_logo.svg/330px-Sodexo_logo.svg.png', color: 'linear-gradient(135deg, #ED1C24 0%, #c40c1e 100%)' },
     { name: 'Shine & Standard', color: 'linear-gradient(135deg, #0f766e 0%, #0d9488 100%)' },
     { name: 'Life Pillar Foods', color: 'linear-gradient(135deg, #15803d 0%, #16a34a 100%)' },
-    { name: 'Lemon Tree Hotels', color: 'linear-gradient(135deg, #ca8a04 0%, #eab308 100%)' },
+    { name: 'Lemon Tree Hotels', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/11/The_Lemon_Tree_Hotel_Logo.png', color: 'linear-gradient(135deg, #ca8a04 0%, #eab308 100%)' },
     { name: 'Rare Hospitality & Services Pvt. Ltd.', short: 'Rare Hospitality', color: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)' },
     { name: 'GDX Security Solutions Pvt. Ltd.', short: 'GDX Security', color: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)' },
     { name: 'Shining Star Outsource Pvt. Ltd.', short: 'Shining Star', color: 'linear-gradient(135deg, #0369a1 0%, #0284c7 100%)' },
     { name: 'Duster Total Solutions Pvt. Ltd.', short: 'Duster Solutions', color: 'linear-gradient(135deg, #475569 0%, #64748b 100%)' },
-    { name: 'Devyani International (Costa Coffee)', short: 'Costa Coffee', color: 'linear-gradient(135deg, #6F1D1B 0%, #8b2c2a 100%)' },
+    { name: 'Devyani International (Costa Coffee)', short: 'Costa Coffee', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Costa_Coffee_Logo_white_on_red.png/330px-Costa_Coffee_Logo_white_on_red.png', color: 'linear-gradient(135deg, #6F1D1B 0%, #8b2c2a 100%)' },
     { name: 'Shubram Hospital Solutions Pvt. Ltd.', short: 'Shubram Hospital', color: 'linear-gradient(135deg, #0e7490 0%, #06b6d4 100%)' },
   ];
   const TRACK = [...CLIENTS, ...CLIENTS];
@@ -332,27 +361,22 @@ function TrustedByClients() {
         </Reveal>
       </div>
 
-      {/* Marquee */}
+      {/* Marquee — logos only */}
       <div className="relative mt-16 overflow-hidden" style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)' }}>
         <motion.div
           className="flex gap-6 w-max"
           animate={{ x: ['0%', '-50%'] }}
           transition={{ duration: 50, ease: 'linear', repeat: Infinity }}
         >
-          {TRACK.map((c, i) => (<ClientCard key={i} {...c} />))}
+          {TRACK.map((c, i) => (<MarqueeLogo key={i} {...c} />))}
         </motion.div>
       </div>
 
-      {/* Compact grid below for full readability */}
+      {/* Compact grid below — logo + name */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-14">
         <Reveal delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {CLIENTS.map((c, i) => (
-              <motion.div key={i} whileHover={{ y: -2 }} className="flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-white border border-black/5 shadow-soft">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span className="text-[13px] font-medium text-foreground/80 truncate">{c.short || c.name}</span>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {CLIENTS.map((c, i) => (<GridClient key={i} {...c} />))}
           </div>
         </Reveal>
 
