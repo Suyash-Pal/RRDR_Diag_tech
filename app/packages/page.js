@@ -21,10 +21,7 @@ export default function PackagesPage() {
                 {i===1 && <div className="absolute top-4 right-4 inline-flex items-center gap-1 text-[10px] uppercase tracking-wider bg-white/15 px-2 py-1 rounded-full"><Sparkles className="w-3 h-3" />Bestseller</div>}
                 <div className={`text-xs uppercase tracking-[0.2em] ${i===1 ? 'text-blue-300' : 'text-blue-600'} font-semibold`}>{p.audience}</div>
                 <h3 className="mt-3 text-2xl font-bold tracking-tight">{p.name}</h3>
-                <div className="mt-4 flex items-baseline gap-2">
-                  <span className="text-4xl font-bold">₹{p.price}</span>
-                  <span className={`text-sm line-through ${i===1 ? 'text-white/40' : 'text-muted-foreground'}`}>₹{p.mrp}</span>
-                </div>
+                
                 <div className={`mt-1 text-xs ${i===1 ? 'text-white/60' : 'text-muted-foreground'}`}>{p.tests} tests · single visit</div>
                 <ul className="mt-6 space-y-2.5">
                   {p.highlights.map((h) => (<li key={h} className="flex gap-2 text-sm"><Check className={`w-4 h-4 mt-0.5 ${i===1 ? 'text-emerald-300' : 'text-emerald-600'}`} />{h}</li>))}

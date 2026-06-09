@@ -36,7 +36,7 @@ export default function TestsPage() {
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{t.time}</span>
                 </div>
                 <div className="mt-6 flex items-center justify-between">
-                  <div><span className="text-2xl font-bold">₹{t.price}</span><span className="ml-2 text-sm text-muted-foreground line-through">₹{t.mrp}</span></div>
+                  <div><span className="text-2xl font-bold"></span><span className="ml-2 text-sm text-muted-foreground line-through"></span></div>
                   <Link href="/home-collection" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600">Add <ArrowRight className="w-4 h-4" /></Link>
                 </div>
               </motion.div>

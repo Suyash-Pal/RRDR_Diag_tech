@@ -462,7 +462,10 @@ function Testimonials() {
 }
 
 function Certifications() {
-  const items = ['NABL-MC-10027', 'ISO 9001-2015'];
+  const items = [
+    { label: 'NABL-MC-10027', img: 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/0bf2f8xo_WhatsApp%20Image%202026-06-06%20at%2015.15.02%20%282%29.jpeg', alt: 'NABL Accreditation MC-10027', fit: 'cover' },
+    { label: 'ISO 9001-2015', img: 'https://customer-assets.emergentagent.com/job_luxury-health-tech/artifacts/lrkqy806_WhatsApp%20Image%202026-06-06%20at%2015.15.02%20%281%29.jpeg', alt: 'ISO 9001:2015 Certified', fit: 'contain' },
+  ];
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -472,12 +475,26 @@ function Certifications() {
             <h2 className="mt-3 text-3xl lg:text-4xl font-bold tracking-tight">Quality you can verify.</h2>
           </div>
         </Reveal>
-        <div className="mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+        <div className="mt-12 flex flex-wrap justify-center items-stretch gap-6 sm:gap-8">
           {items.map((x, i) => (
-            <Reveal key={x} delay={i * 0.05}>
-              <div className="w-40 sm:w-48 aspect-[3/2] rounded-2xl glass shadow-soft flex items-center justify-center">
-                <span className="text-sm font-bold tracking-wider text-foreground/70">{x}</span>
-              </div>
+            <Reveal key={x.label} delay={i * 0.05}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+                className="group w-48 sm:w-56 rounded-2xl glass shadow-soft hover:shadow-premium overflow-hidden flex flex-col"
+              >
+                <div className={`relative aspect-square bg-white flex items-center justify-center overflow-hidden ${x.fit === 'cover' ? 'p-0' : 'p-5'}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={x.img}
+                    alt={x.alt}
+                    className={`transition-transform duration-500 group-hover:scale-105 ${x.fit === 'cover' ? 'w-full h-full object-cover scale-[1.55]' : 'max-w-full max-h-full object-contain'}`}
+                  />
+                </div>
+                <div className="px-4 py-3 border-t border-black/5 text-center">
+                  <span className="text-sm font-bold tracking-wider text-foreground/80">{x.label}</span>
+                </div>
+              </motion.div>
             </Reveal>
           ))}
         </div>

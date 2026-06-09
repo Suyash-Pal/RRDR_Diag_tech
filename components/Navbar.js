@@ -85,7 +85,7 @@ export default function Navbar() {
                     <Link href={l.href} className={`block px-4 py-2.5 rounded-xl text-sm font-medium ${pathname === l.href ? 'bg-foreground/[0.06]' : 'hover:bg-foreground/[0.04]'}`}>{l.label}</Link>
                   </motion.div>
                 ))}
-                <Link href="/report-login" className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white gradient-primary">
+                <Link href="http://122.176.77.190:8000/Reports/" className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white gradient-primary">
                   <Download className="w-4 h-4" /> Download Report
                 </Link>
               </div>
