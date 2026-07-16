@@ -215,7 +215,7 @@ export default function HomeCollectionPage() {
                   <div>
                     <label className="text-sm font-semibold flex items-center gap-2"><Clock className="w-4 h-4" />Time slot</label>
                     <select value={form.time} onChange={(e)=>set('time', e.target.value)} className="mt-2 w-full px-4 py-3 rounded-xl bg-white border border-black/10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400/40">
-                      <option value="">Select slot</option><option>6:00 – 7:00 AM</option><option>7:00 – 8:00 AM</option><option>8:00 – 9:00 AM</option><option>9:00 – 10:00 AM</option>
+                      <option value="">Select slot</option><option>9:00 – 10:00 AM</option><option>10:00 – 11:00 AM</option><option>11:00 – 12:00 NOON</option><option>12:00 – 01:00 PM</option><option>01:00 – 02:00 PM</option><option>02:00 – 03:00 PM</option><option>03:00 – 04:00 PM</option><option>04:00 – 05:00 PM</option><option>05:00 – 06:00 PM</option>
                     </select>
                   </div>
                 </div>
