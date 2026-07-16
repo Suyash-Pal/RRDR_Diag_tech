@@ -50,7 +50,7 @@ export default function HomeCollectionPage() {
       setSubmitError('');
       const ref = 'RRDR-CN-' + Math.floor(Math.random() * 99999).toString().padStart(5, '0');
       try {
-        const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+        const accessKey = '7a7c2ab2-ba1e-4eb4-bd5c-3046128a5e40';
         const plainMessage = [
           `New booking received from the Rroyals Diagnostics website.`,
           ``,
